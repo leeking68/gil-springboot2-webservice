@@ -17,6 +17,6 @@ public class HelloResponseDtoTest {
 
         //then
         assertThat(dto.getName()).isEqualTo(name); // test verify method
-        assertThat(dto.getAmount()).isEqualTo(amount); // isEqualTo method compared with data in assertThat
+        assertThat(dto.getAmount()).isEqualTo(amount); // isEqualTo method compared with data in assertThat.
     }
 }
