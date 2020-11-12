@@ -12,17 +12,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.hamcrest.Matchers.is;
 
-@RunWith(SpringRunner.class)
-@WebMvcTest(controllers = HelloController.class)
+@RunWith(SpringRunner.class) // connect between springboot and junit
+@WebMvcTest(controllers = HelloController.class) // Annotation that concentrate on Web(Spring MVC) - @Controller, @ControllerAdvice
 public class HelloControllerTest {
 
-    @Autowired
-    private MockMvc mvc;
+    @Autowired // inject bean
+    private MockMvc mvc; // start point of spring mvc test. use to web api test
 
     @Test public void hello가_리턴된다()  throws Exception {
         String hello = "hello";
 
-        mvc.perform(get("/hello")).andExpect(status().isOk()).andExpect(content().string(hello));
+        mvc.perform(get("/hello")) // request get
+                .andExpect(status().isOk()) // verify result from response status code
+                .andExpect(content().string(hello)); // verify result from response content
 
     }
 
@@ -36,7 +38,7 @@ public class HelloControllerTest {
                 param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(name)))
-                .andExpect(jsonPath("$.amount", is(amount)));
+                .andExpect(jsonPath("$.amount", is(amount))); // jsonpath method is verify response data of json
     }
 
 }
