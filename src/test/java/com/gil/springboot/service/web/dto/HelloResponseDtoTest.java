@@ -20,3 +20,24 @@ public class HelloResponseDtoTest {
         assertThat(dto.getAmount()).isEqualTo(amount); // isEqualTo method compared with data in assertThat.
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
