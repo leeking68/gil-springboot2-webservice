@@ -1,5 +1,6 @@
 package com.gil.springboot.service.domain.posts;
 
+import com.gil.springboot.service.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter // auto add about getter method related to all field
 @NoArgsConstructor // add default constructor
 @Entity // this class will link with Table
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // PK field of table
     @GeneratedValue(strategy = GenerationType.IDENTITY) // rule of make PK. To auto_increment, have to add " ~.IDENTITY"
