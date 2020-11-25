@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 @Getter
-@MappedSuperclass // if some class extend this class, field that made this class is be column
+@MappedSuperclass // if some class extend this class, field that made this class is be column.
 @EntityListeners((AuditingEntityListener.class)) // add Auditing function
 public abstract class BaseTimeEntity {
 
