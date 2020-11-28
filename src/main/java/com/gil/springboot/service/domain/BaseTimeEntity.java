@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @MappedSuperclass // if some class extend this class, field that made this class is be column.
-@EntityListeners((AuditingEntityListener.class)) // add Auditing function
+@EntityListeners(AuditingEntityListener.class) // add Auditing function
 public abstract class BaseTimeEntity {
 
     @CreatedDate // Time will save when make a entity and save
